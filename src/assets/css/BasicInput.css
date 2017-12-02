@@ -1,0 +1,71 @@
+.basic-input {
+	padding-top: 1em;
+	margin-bottom: 1em;
+	text-align: center;
+}
+
+select[name="typeEntreprise"] {
+	width: 5.2em;
+}
+
+input[name="effectifEntreprise"] {
+	width: 3.5em;
+}
+
+input[name="codePostal"] {
+	max-width: 5.5em;
+}
+
+input[name="heuresParSemaine"] {
+	max-width: 2.3em;
+}
+
+label.dynamic-info {
+	font-size: 65%;
+	font-style: italic;
+}
+
+select[data-provides="employee"] {
+	width: 6.5em;
+}
+
+
+/* Enables the first input's help text to pop
+over the lasts of this group.
+Also keeps related inputs together. */
+.basic-input fieldset {
+	white-space: nowrap;
+	display: inline-block;
+}
+
+input#salaire:hover ~ *,
+input#salaire:focus ~ * {
+	visibility: hidden;
+}
+input#salaire:hover + label,
+input#salaire:focus + label {
+	visibility: visible;
+}
+input#salaire:hover ~ .input-help,
+input#salaire:focus ~ .input-help {
+	visibility: visible;
+	opacity: 1;
+}
+
+/* This input-help will pop over the
+following input fields, using the
+negative margin trick */
+input#salaire ~ .input-help {
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity .1s linear;
+	display: inline-block;
+	font-size: 60%;
+	margin: 0 -21em 0 .5em;
+	line-height: 1.2em;
+	border-left: 1px solid #CCC;
+	padding: .5em;
+	width: 20em;
+	vertical-align: middle;
+	text-align: left;
+}

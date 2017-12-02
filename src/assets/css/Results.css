@@ -1,0 +1,85 @@
+.simulation-summary {
+	margin: auto;
+	margin-top: 1.5em;
+	width: 90%;
+}
+
+.simulation-summary .content {
+	padding: .01em 1.8em;
+	position: relative;
+	border-radius: .1em;
+}
+
+@media(max-width: 500px) {
+	.simulation-summary .content {
+		padding: .01em .8em;
+	}
+}
+
+
+.simulation-summary .figures {
+	display: inline-block;
+	width: 70%;
+}
+
+.simulation-summary p {
+	font-weight: 200;
+	line-height: 1.2em;
+	border-left: 1px solid;
+	padding-left: .65em;
+}
+
+.simulation-summary .figure {
+	padding: 0 .2em;
+	transition: background .8s;
+}
+
+/* Animation of summary figures changes : flash ! */
+.flash-enter {
+		background: rgba(255, 255, 255, 1);
+}
+
+.flash-leave {
+		/* Completely hide the button while it's being animated and before it's removed from the DOM. */
+		display: none;
+}
+
+/* See handleResultActions() for what happens with these buttons */
+
+button.action span {
+	text-transform: uppercase;
+}
+
+.show-details {
+	border: 1px solid;
+	border-radius: .2em;
+	background: none;
+	font-size: 55%;
+	padding: .3em;
+	cursor: pointer;
+	width: 25%;
+	position: absolute;
+	top: 40%;
+	box-sizing:border-box;
+}
+
+.show-details:hover {
+	border-width: 2px;
+}
+
+.bring-input-back {
+	display: block;
+	margin: 0 auto;
+	width: 60%;
+	background: none;
+	border: 1px solid white;
+	color: rgba(0, 0, 0, .5);
+	font-style: italic;
+	font-size: 70%;
+	padding: .3em;
+	cursor: pointer;
+	text-align: center;
+}
+.bring-input-back:disabled {
+	display: none;
+}

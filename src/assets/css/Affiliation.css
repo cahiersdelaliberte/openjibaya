@@ -1,0 +1,24 @@
+#affiliation {
+	font-size: 50%;
+	margin-top: 3.5em;
+	opacity: .8;
+	text-align: center;
+	clear: both;
+}
+
+#affiliation a {
+	text-decoration-color: #aaa;
+	color: #666;
+	margin: 0 .3em;
+}
+
+#affiliation-contact {
+	font-size: 95%;
+}
+
+#affiliation img {
+	width: 12em;
+	padding: 0 .8em;
+	vertical-align: middle;
+}
+
