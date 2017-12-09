@@ -13,16 +13,26 @@ let Figure = ({figure, title, textColour}) =>
 			</span>
 		</ReactCSSTransitionGroup>
 
+let defaultColour = '#4A89DC'
+console.log(defaultColour)
+let defaultTextColour = '#000000',
+	lightenTextColour = defaultTextColour => defaultTextColour === '#ffffff' ? 'rgba(255, 255, 255, .85)' : '#333'
+console.log(defaultTextColour)
 
 export default class Summary extends Component {
 	render() {
-		//let colour: '#4A89DC',
-		//textColour: '#000000',
-		//lighterTextColour: '#4A89DC'	
-	
+
+		// let colour = '#4A89DC',
+		// textColour = '#000000',
+		// lighterTextColour = '#4A89DC'	
+		/*
 		let
 			{
-				//themeColours: {colour, textColour, lighterTextColour},
+				themeColours: {
+					colour = defaultColour, 
+					textColour, 
+					lighterTextColour
+				},
 				results,
 				results: {
 					salaire_super_brut, cout_du_travail,
@@ -31,8 +41,22 @@ export default class Summary extends Component {
 				humanizeFigures: humanize,
 				toggleSection,
 				showDetails,
-			} = this.props,
-			labelTypeEntreprise = {
+			} = this.props
+		*/
+
+		let
+		{
+			themeColours,
+			results,
+			typeEntreprise, typeSalaireEntré,
+			humanizeFigures,
+			toggleSection,
+			showDetails,
+		} = this.props
+
+
+		/*
+		let labelTypeEntreprise = {
 				'entreprise_est_association_non_lucrative': 'association',
 				'entreprise': 'entreprise',
 			}[typeEntreprise],
@@ -44,10 +68,13 @@ export default class Summary extends Component {
 			salaireFigure = results[salaireVariable],
 			paragraphBorderStyle = {borderColor: textColour},
 			buttonStyle = {borderColor: textColour, color: textColour}
+		*/
+		let paragraphBorderStyle = {borderColor: defaultTextColour},
+			buttonStyle = {borderColor: defaultTextColour, color: defaultTextColour}
 
 		return (
 			<section className="simulation-summary">
-				<div className="content" style={{background: colour, color: lighterTextColour}}>
+				<div className="content" style={{background: defaultColour, color: defaultTextColour}}>
 					<div className="figures">
 						<p style={paragraphBorderStyle}>
 						

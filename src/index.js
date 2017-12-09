@@ -11,10 +11,8 @@
 // Start the server app
 //require("./src/server.js")
 
-import greet from './hello.js';
 
 console.log("I'm the entry point");
-greet();
 
 import React from 'react';
 import ReactDOM from 'react-dom';
