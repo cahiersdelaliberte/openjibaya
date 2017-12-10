@@ -20,7 +20,7 @@ export default class BasicInput extends Component {
 			<form className="basic-input">
 				
 				Je suis 
-				<select name="typeEmployé" >
+				<select name="typeEmploye" >
 					<option value="employe">employé-e</option>	
 					<option value="fonctionnaire">fonctionnaire</option>					
 					<option value="professionnel_liberal" disabled="true">professionnel-le libéral-e</option>
@@ -42,7 +42,7 @@ export default class BasicInput extends Component {
 					</span>
 
 					<span>par</span>	
-					<select name="périodeSalaireEntré" >
+					<select name="periodeSalaireEntre" >
 						<option value="mois">mois</option>
 						<option value="an">an</option>
 					</select>	

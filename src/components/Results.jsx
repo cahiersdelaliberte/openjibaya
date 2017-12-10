@@ -7,19 +7,18 @@ import '../assets/css/Results.css'
 let fmt = new Intl.NumberFormat('fr-FR').format
 
 export default class Results extends Component {
+
 	render() {
-		
-		console.log(this.props)
-		console.log(this.props.results)
+		console.log("Results.jsx")
+		console.log("props: " + this.props.results.items)
+		console.log("state: " + this.state)
 		
 		return (
 			<div>
-				<Summary {...this.props}/>
+				<Summary />
 				<div>
-					<BarChart 
-					results={this.props.results}
-					/>
-					
+					<BarChart results={this.props.results} />
+
 					<br />
 					
 				</div>

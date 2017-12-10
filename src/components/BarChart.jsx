@@ -214,7 +214,7 @@ export default class BarChart extends Component {
 		//let salaireNetAPayer = 14700
 
 		// console.log("Salaire net à payer : "+salaireNetAPayer+"Salaire imposable : "+salaireImposable)
-		debugger
+		//Add break point: debugger
 		
 		return (
 				<ReactHighcharts config = {draw(salaireImposable, salaireNetAPayer)}></ReactHighcharts>

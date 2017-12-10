@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 
+console.log("Summary.jsx")
+
+
 let Figure = ({figure, title, textColour}) =>
 	<ReactCSSTransitionGroup
 			transitionName="flash"
