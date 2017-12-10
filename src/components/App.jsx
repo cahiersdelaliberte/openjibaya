@@ -2,6 +2,10 @@ import React from 'react'
 import InputSection from './InputSection.jsx'
 import Results from './Results.jsx'
 import Affiliation from './Affiliation.jsx'
+//import "../assets/css/advanced-questions.css"
+import "../assets/css/main.css"
+//import "../assets/css/Details.css"
+import "../assets/css/reset.css"
 
 
 let smic_tnd = 338
@@ -28,11 +32,11 @@ export default class App extends React.Component {
     var inputChanged = false
 
     return (
-     <div style={{ textAlign: 'center' }}>
+      <div className="widget" style={{ textAlign: 'center' }}>
         <InputSection inputTouched={ inputTouched } inputChanged={ inputChanged } />
         <Results results={ this.state.results }/>
         <Affiliation />
-    </div>
+      </div>
     );
   }
 }

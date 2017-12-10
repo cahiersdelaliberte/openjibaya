@@ -18,7 +18,7 @@ let Figure = ({figure, title, textColour}) =>
 
 let defaultColour = '#4A89DC'
 console.log(defaultColour)
-let defaultTextColour = '#000000',
+let defaultTextColour = '#ffffff',
 	lightenTextColour = defaultTextColour => defaultTextColour === '#ffffff' ? 'rgba(255, 255, 255, .85)' : '#333'
 console.log(defaultTextColour)
 
