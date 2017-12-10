@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 //import { Field, reduxForm, formValueSelector, change } from 'redux-form'
 //import initialValues from '../basicInputInitialValues'
-//import './BasicInput.css'
+import '../assets/css/BasicInput.css'
 
 //let selector = formValueSelector('basicInput')
 

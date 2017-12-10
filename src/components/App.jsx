@@ -29,8 +29,6 @@ export default class App extends React.Component {
 
     return (
      <div style={{ textAlign: 'center' }}>
-        <h1> { simulatorName } </h1>
-
         <InputSection inputTouched={ inputTouched } inputChanged={ inputChanged } />
         <Results results={ this.state.results }/>
         <Affiliation />
