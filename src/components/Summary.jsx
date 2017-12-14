@@ -23,30 +23,31 @@ let defaultTextColour = '#ffffff',
 console.log(defaultTextColour)
 
 export default class Summary extends Component {
+	constructor(props){
+		super(props)
+		this.props = {
+			themeColours,
+			results,
+			typeEntreprise, typeSalaireEntré,
+			humanizeFigures,
+			toggleSection,
+			showDetails,
+			handleOnButtonClick,
+		}
+	}
+
+	handleOnButtonClick(){
+		console.log("!	Summary - handleOnButtonClick")
+		this.props.handleOnButtonClick()
+	}
+
 	render() {
 
 		// let colour = '#4A89DC',
 		// textColour = '#000000',
 		// lighterTextColour = '#4A89DC'	
-		/*
-		let
-			{
-				themeColours: {
-					colour = defaultColour, 
-					textColour, 
-					lighterTextColour
-				},
-				results,
-				results: {
-					salaire_super_brut, cout_du_travail,
-				},
-				typeEntreprise, typeSalaireEntré,
-				humanizeFigures: humanize,
-				toggleSection,
-				showDetails,
-			} = this.props
-		*/
 
+		/*
 		let
 		{
 			themeColours,
@@ -55,8 +56,9 @@ export default class Summary extends Component {
 			humanizeFigures,
 			toggleSection,
 			showDetails,
+			handleOnButtonClick,
 		} = this.props
-
+		*/
 
 		/*
 		let labelTypeEntreprise = {
@@ -90,7 +92,7 @@ export default class Summary extends Component {
 					</div>
 					<button	type="button"
 						className="action show-details" autoComplete="off"
-						onClick={toggleSection}
+						onClick={ this.handleOnButtonClick }
 						style={buttonStyle} >
 						{showDetails ?
 							<span>Revenir à la saisie</span> :

@@ -47,7 +47,7 @@ function draw(salaireNetAPayer, impots, cotisations) {
 	            color: Highcharts.getOptions().colors[3],
 	            data: [{
 	                name: 'Salaire Net A Payer',
-	                y: salaireNetAPayer  
+	                y: salaireNetAPayer
 	            }, {
 	                name: 'Impôts',
 	                y: impots,

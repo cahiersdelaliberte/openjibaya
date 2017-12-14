@@ -10,6 +10,20 @@ import '../assets/css/Results.css'
 let fmt = new Intl.NumberFormat('fr-FR').format
 
 export default class Results extends Component {
+	constructor(props){
+		super(props)
+		this.state = {
+			buttonClicked: false
+		}
+
+		// This binding is necessary to make `this` work in the callback
+		this.handleOnButtonClick = this.handleOnButtonClick.bind(this);
+	}
+
+	handleOnButtonClick(){
+		console.log("!	Results - handleOnButtonClick")
+		this.setState({ buttonClicked: true })
+	}
 
 	render() {
 		console.log("Results.jsx")
@@ -18,14 +32,19 @@ export default class Results extends Component {
 		
 		return (
 			<div>
-				<Summary />
-				<div>
-					<WaterfallChart />
+				<button	type="button"
+				onClick={ this.handleOnButtonClick }>CLICK</button>
+				
 
-					<br />
-
-					<BarChart results={this.props.results} />
-				</div>
+				{ this.state.buttonClicked ?
+					<div>
+						<WaterfallChart />
+						<br />
+						<BarChart results={this.props.results} />
+					</div>
+					:
+					<div/>
+				}
 			</div>
 		)
 	}
