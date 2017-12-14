@@ -30,7 +30,7 @@ export default class App extends React.Component {
     var inputChanged = false
 
     return (
-      <div className="widget" style={{ textAlign: 'center' }}>
+      <div className="widget">
         <InputSection inputTouched={ inputTouched } inputChanged={ inputChanged } />
         <Results results={ this.state.results }/>
         <Affiliation />

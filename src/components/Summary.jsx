@@ -25,15 +25,17 @@ console.log(defaultTextColour)
 export default class Summary extends Component {
 	constructor(props){
 		super(props)
-		this.props = {
+		let {
 			themeColours,
 			results,
 			typeEntreprise, typeSalaireEntré,
 			humanizeFigures,
 			toggleSection,
-			showDetails,
 			handleOnButtonClick,
-		}
+		} = this.props
+
+		// This binding is necessary to make `this` work in the callback
+		this.handleOnButtonClick = this.props.handleOnButtonClick.bind(this);
 	}
 
 	handleOnButtonClick(){
@@ -43,37 +45,6 @@ export default class Summary extends Component {
 
 	render() {
 
-		// let colour = '#4A89DC',
-		// textColour = '#000000',
-		// lighterTextColour = '#4A89DC'	
-
-		/*
-		let
-		{
-			themeColours,
-			results,
-			typeEntreprise, typeSalaireEntré,
-			humanizeFigures,
-			toggleSection,
-			showDetails,
-			handleOnButtonClick,
-		} = this.props
-		*/
-
-		/*
-		let labelTypeEntreprise = {
-				'entreprise_est_association_non_lucrative': 'association',
-				'entreprise': 'entreprise',
-			}[typeEntreprise],
-			correspondanceSalaires = {
-				'net': [ 'brut', 'Salaire brut', 'salaire_de_base' ],
-				'brut': [ 'net', 'Salaire net', 'salaire_net_a_payer' ],
-			}[typeSalaireEntré],
-			[ salaireTitle, salaireDescription, salaireVariable ] = correspondanceSalaires,
-			salaireFigure = results[salaireVariable],
-			paragraphBorderStyle = {borderColor: textColour},
-			buttonStyle = {borderColor: textColour, color: textColour}
-		*/
 		let paragraphBorderStyle = {borderColor: defaultTextColour},
 			buttonStyle = {borderColor: defaultTextColour, color: defaultTextColour}
 
@@ -94,8 +65,7 @@ export default class Summary extends Component {
 						className="action show-details" autoComplete="off"
 						onClick={ this.handleOnButtonClick }
 						style={buttonStyle} >
-						{showDetails ?
-							<span>Revenir à la saisie</span> :
+						{
 							<span>Voir le détail<br />des prélèvements</span>
 						}
 					</button>

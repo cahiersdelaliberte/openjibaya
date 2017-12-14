@@ -32,9 +32,7 @@ export default class Results extends Component {
 		
 		return (
 			<div>
-				<button	type="button"
-				onClick={ this.handleOnButtonClick }>CLICK</button>
-				
+				<Summary handleOnButtonClick={ this.handleOnButtonClick } />
 
 				{ this.state.buttonClicked ?
 					<div>
