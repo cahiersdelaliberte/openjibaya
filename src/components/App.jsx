@@ -2,9 +2,7 @@ import React from 'react'
 import InputSection from './InputSection.jsx'
 import Results from './Results.jsx'
 import Affiliation from './Affiliation.jsx'
-//import "../assets/css/advanced-questions.css"
 import "../assets/css/main.css"
-//import "../assets/css/Details.css"
 import "../assets/css/reset.css"
 
 

@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
-//import { Field, reduxForm, formValueSelector, change } from 'redux-form'
-//import initialValues from '../basicInputInitialValues'
 import '../assets/css/BasicInput.css'
 
-//let selector = formValueSelector('basicInput')
+
+function defaultSmic(){
+
+}
+
 
 export default class BasicInput extends Component {
 	render() {
@@ -18,23 +20,23 @@ export default class BasicInput extends Component {
 
 		return (
 			<form className="basic-input">
-				
+
 				Je suis 
 				<select name="typeEmploye" >
-					<option value="employe">employé-e</option>	
-					<option value="fonctionnaire">fonctionnaire</option>					
+					<option value="employe">employé-e</option>
+					<option value="fonctionnaire">fonctionnaire</option>
 					<option value="professionnel_liberal" disabled="true">professionnel-le libéral-e</option>
 				</select>
 				.<br />
-				
+
 				Je touche 
 				<fieldset>
 					<input id="salaire" name="salaire" component="input" type="number"
-					min="0" max="9999999" placeholder={smic_tnd_an} step="any" />
+					min="0" max="9999999" placeholder={ smic_tnd_an } step="any" />
 					<label htmlFor="salaire">
 						&nbsp; Dinars Tunisiens &nbsp;
 					</label>
-				
+
 					<span className="input-help">
 						Rémunération totale<br/>
 						<em>(min. <span data-source="smic_proratise" data-round>{smic_tnd}</span>)</em>

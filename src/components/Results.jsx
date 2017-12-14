@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
 import Summary from './Summary.jsx'
+
 import BarChart from './BarChart.jsx'
-//import WaterfallChart from '../components/WaterfallChart'
+import WaterfallChart from './WaterfallChart.jsx'
+
 import '../assets/css/Results.css'
+
 
 let fmt = new Intl.NumberFormat('fr-FR').format
 
@@ -17,10 +20,11 @@ export default class Results extends Component {
 			<div>
 				<Summary />
 				<div>
-					<BarChart results={this.props.results} />
+					<WaterfallChart />
 
 					<br />
-					
+
+					<BarChart results={this.props.results} />
 				</div>
 			</div>
 		)

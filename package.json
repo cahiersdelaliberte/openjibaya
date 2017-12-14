@@ -37,6 +37,9 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "highcharts": "^6.0.3",
+    "highcharts-exporting": "^0.1.2",
+    "highcharts-more": "^0.1.2",
     "react": "^16.2.0",
     "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.2.0",

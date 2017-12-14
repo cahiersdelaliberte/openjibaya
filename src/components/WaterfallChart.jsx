@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
-import ReactHighcharts from 'react-highcharts' // Expects that Highcharts was loaded in the code.
+import Highcharts from 'highcharts'
+
+const ReactHighcharts = require("react-highcharts");
+require("highcharts/js/highcharts-more")(ReactHighcharts.Highcharts);
+
 
 function draw(salaireNetAPayer, impots, cotisations) {
 	
@@ -11,7 +15,7 @@ function draw(salaireNetAPayer, impots, cotisations) {
 
 	// creation du graphique
 	return {
-	   
+
 	        chart: {
 	            type: 'waterfall'
 	        },
