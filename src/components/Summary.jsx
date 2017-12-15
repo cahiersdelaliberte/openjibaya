@@ -17,10 +17,8 @@ let Figure = ({figure, title, textColour}) =>
 		</ReactCSSTransitionGroup>
 
 let defaultColour = '#4A89DC'
-console.log(defaultColour)
 let defaultTextColour = '#ffffff',
 	lightenTextColour = defaultTextColour => defaultTextColour === '#ffffff' ? 'rgba(255, 255, 255, .85)' : '#333'
-console.log(defaultTextColour)
 
 export default class Summary extends Component {
 	constructor(props){

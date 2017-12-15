@@ -13,6 +13,8 @@ function draw(salaireNetAPayer, impots, cotisations) {
 	//var impots = 1000
 	//var salaireNetAPayer = 1500
 
+	var chartTitle = 'Impôts & Cotisations'
+
 	// creation du graphique
 	return {
 
@@ -21,7 +23,7 @@ function draw(salaireNetAPayer, impots, cotisations) {
 	        },
 
 	        title: {
-	            text: 'Highcharts Waterfall'
+	            text: chartTitle
 	        },
 
 	        xAxis: {
@@ -47,14 +49,15 @@ function draw(salaireNetAPayer, impots, cotisations) {
 	            color: Highcharts.getOptions().colors[3],
 	            data: [{
 	                name: 'Salaire Net A Payer',
-	                y: salaireNetAPayer
+	                y: salaireNetAPayer,
+	                color: Highcharts.getOptions().colors[1]
 	            }, {
 	                name: 'Impôts',
 	                y: impots,
-	                color: Highcharts.getOptions().colors[1]
 	            }, {
 	                name: 'Salaire De Base',
-	                isIntermediateSum: true
+	                isIntermediateSum: true,
+	                color: Highcharts.getOptions().colors[1]
 	            }, {
 	                name: 'Cotisations',
 	                y: cotisations
