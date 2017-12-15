@@ -50,7 +50,7 @@ function draw(salaireImposable, salaireNetAPayer) {
 	      type: 'bar'
 	    },
 	    title: {
-	      text: 'Salaire imposable : '+salaireImposable+' / Salaire net à payer : '+salaireNetAPayer+' / Imposition de : '+(salaireImposable - salaireNetAPayer) + ' dinars'
+	      text: 'Répartition du budget'
 	    },
 	    xAxis: {
 	      categories: ['Vos impôts contribuent au']
@@ -214,7 +214,9 @@ export default class BarChart extends Component {
 		//let salaireNetAPayer = 14700
 
 		// console.log("Salaire net à payer : "+salaireNetAPayer+"Salaire imposable : "+salaireImposable)
-		//Add break point: debugger
+		console.log('Salaire imposable : '+salaireImposable+' / Salaire net à payer : '+salaireNetAPayer)
+		console.log('Imposition de : '+(salaireImposable - salaireNetAPayer))
+		//To add break point: debugger
 		
 		return (
 				<ReactHighcharts config = {draw(salaireImposable, salaireNetAPayer)}></ReactHighcharts>
