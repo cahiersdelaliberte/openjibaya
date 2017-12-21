@@ -8,7 +8,7 @@
     "clean": "rm -rf dist",
     "build": "webpack -p --optimize-minimize --optimize-dedupe --optimize-occurrence-order",
     "watch": "webpack --watch",
-    "start": "webpack-dev-server",
+    "start": "node src/server.js",
     "test": "echo \"Error: No test specified! Configure in package.json\" && exit 1"
   },
   "repository": "",
