@@ -26,10 +26,15 @@ export default class Summary extends Component {
 		let {
 			themeColours,
 			results,
-			typeEntreprise, typeSalaireEntré,
 			humanizeFigures,
 			toggleSection,
-			handleOnButtonClick,
+
+			typeEmploye,
+			salaire,
+			periodeSalaire,
+			statutFamilial,
+			nbEnfants,
+			handleOnButtonClick
 		} = this.props
 
 		// This binding is necessary to make `this` work in the callback

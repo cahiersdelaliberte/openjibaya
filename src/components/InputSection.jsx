@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import BasicInput from './BasicInput.jsx'
-//import InfoZone from './InfoZone'
+//import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup'
 
 export default class Input extends Component {
 	render() {
