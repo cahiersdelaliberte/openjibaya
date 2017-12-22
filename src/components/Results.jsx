@@ -7,19 +7,30 @@ import WaterfallChart from './WaterfallChart.jsx'
 import '../assets/css/Results.css'
 
 
-let fmt = new Intl.NumberFormat('fr-FR').format
+let numberFormat = new Intl.NumberFormat('fr-FR').format
 
 export default class Results extends Component {
 	constructor(props){
 		super(props)
+
+		let {
+			typeEmploye,
+			salaire,
+			periodeSalaire,
+			statutFamilial,
+			nbEnfants
+		} = this.props
+		
+		//console.log("typeEmploye " + typeEmploye)
+		
+		// This binding is necessary to make `this` work in the callback
+		this.handleOnButtonClick = this.handleOnButtonClick.bind(this)
+		this.handleOnPlusClick = this.handleOnPlusClick.bind(this)
+		
 		this.state = {
 			buttonClicked: false,
 			plusClicked: false
 		}
-
-		// This binding is necessary to make `this` work in the callback
-		this.handleOnButtonClick = this.handleOnButtonClick.bind(this);
-		this.handleOnPlusClick = this.handleOnPlusClick.bind(this);
 	}
 
 	handleOnButtonClick(){
@@ -36,12 +47,13 @@ export default class Results extends Component {
 		console.log("Results.jsx")
 		console.log("props: " + this.props.results.items)
 		console.log("state: " + this.state)
+
 		let defaultTextColour = '#ffffff',
 			defaultColour = '#4A89DC',
 			buttonStyle = {background: defaultColour, borderColor: defaultTextColour, color: defaultTextColour}
 		return (
 			<div>
-				<Summary handleOnButtonClick={ this.handleOnButtonClick } />
+				<Summary {...this.props} handleOnButtonClick={ this.handleOnButtonClick } />
 
 				{ this.state.buttonClicked ?
 					<div>

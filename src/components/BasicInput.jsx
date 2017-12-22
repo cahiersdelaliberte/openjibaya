@@ -2,22 +2,66 @@ import React, { Component } from 'react'
 import '../assets/css/BasicInput.css'
 
 
-function defaultSmic(){
+const WAIT_INTERVAL = 500
+const ENTER_KEY = 13
 
-}
+const SMIG_TND_2016 = 338
+const SMIG_TND_AN_2016 = SMIG_TND_2016 * 12
 
 
 export default class BasicInput extends Component {
-	render() {
-		let smic_tnd = 338
-		let smic_tnd_an = smic_tnd *12
+	constructor(props){
+		super(props)
 
+		this.state = {
+			typeEmploye: "fonctionnaire",
+			salaire: SMIG_TND_AN_2016,
+			periodeSalaire: "an",
+			statutFamilial: "celibataire",
+			nbEnfants: 0
+		}
+
+		this.handleChange = this.handleChange.bind(this)
+		this.handleKeyDown = this.handleKeyDown.bind(this)
+	}
+	
+	componentWillMount() {
+		this.timer = null;
+	}
+	
+	handleChange(event){
+		this.triggerChange(event)
+		//clearTimeout(this.timer)
+		//this.timer = setTimeout(this.triggerChange(event), WAIT_INTERVAL)
+	}
+	
+	handleKeyDown(event) {
+		if (event.keyCode === ENTER_KEY) {
+			this.triggerChange(event);
+		}
+	}
+	
+	triggerChange(event) {
+		console.log("before " + this.state.salaire)
+
+		//form element id == this prop name
+		name = event.target.name
+		console.log("triggerChange for: " + event.target)
+		
+		this.setState({
+			[name]: event.target.value
+		})
+
+		console.log("after " + this.state.salaire)
+	}
+	
+	render() {
 		//TN :
 		//Je suis [un/une] [fonctionnaire/employé-e/professionnel-le libéral-e].
 		//Je gagne [...] TND par [mois/an] [après/avant] paiement de l'impôt.
 		//Je suis [célibataire/marié/chef de famille].
 		//J'ai [0/1/2/3/plus de 4] enfant-s.
-
+		console.log("rendered value " + this.state.salaire)
 		return (
 			<form className="basic-input">
 
@@ -32,19 +76,20 @@ export default class BasicInput extends Component {
 				Je touche 
 				<fieldset>
 					<input id="salaire" name="salaire" component="input" type="number"
-					min="0" max="9999999" placeholder={ smic_tnd_an } step="any" />
+					value={ this.state.salaire } min="0" max="9999999" placeholder={ SMIG_TND_AN_2016 } 
+					step="any" onChange={ this.handleChange } onKeyDown={ this.handleKeyDown }/>
 					<label htmlFor="salaire">
 						&nbsp; Dinars Tunisiens &nbsp;
 					</label>
 
 					<span className="input-help">
 						Rémunération totale<br/>
-						<em>(min. <span data-source="smic_proratise" data-round>{smic_tnd}</span>)</em>
+						<em>(min. <span data-source="smic_proratise" data-round>{ SMIG_TND_2016 }</span>)</em>
 						, dont primes.
 					</span>
 
 					<span>par</span>	
-					<select name="periodeSalaireEntre" >
+					<select name="periodeSalaire" >
 						<option value="mois">mois</option>
 						<option value="an">an</option>
 					</select>	
