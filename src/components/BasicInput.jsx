@@ -22,28 +22,14 @@ export default class BasicInput extends Component {
 		}
 
 		this.handleChange = this.handleChange.bind(this)
-		this.handleKeyDown = this.handleKeyDown.bind(this)
 	}
-	
-	componentWillMount() {
-		this.timer = null;
-	}
+
 	
 	handleChange(event){
 		this.triggerChange(event)
-		//clearTimeout(this.timer)
-		//this.timer = setTimeout(this.triggerChange(event), WAIT_INTERVAL)
-	}
-	
-	handleKeyDown(event) {
-		if (event.keyCode === ENTER_KEY) {
-			this.triggerChange(event);
-		}
 	}
 	
 	triggerChange(event) {
-		console.log("before " + this.state.salaire)
-
 		//form element id == this prop name
 		name = event.target.name
 		console.log("triggerChange for: " + event.target)
@@ -52,7 +38,8 @@ export default class BasicInput extends Component {
 			[name]: event.target.value
 		})
 
-		console.log("after " + this.state.salaire)
+		console.log("state " + this.state.salaire)
+		console.log("event value to render " + event.target.value)
 	}
 	
 	render() {
@@ -61,7 +48,7 @@ export default class BasicInput extends Component {
 		//Je gagne [...] TND par [mois/an] [après/avant] paiement de l'impôt.
 		//Je suis [célibataire/marié/chef de famille].
 		//J'ai [0/1/2/3/plus de 4] enfant-s.
-		console.log("rendered value " + this.state.salaire)
+		console.log("state after rendering " + this.state.salaire)
 		return (
 			<form className="basic-input">
 
@@ -77,7 +64,7 @@ export default class BasicInput extends Component {
 				<fieldset>
 					<input id="salaire" name="salaire" component="input" type="number"
 					value={ this.state.salaire } min="0" max="9999999" placeholder={ SMIG_TND_AN_2016 } 
-					step="any" onChange={ this.handleChange } onKeyDown={ this.handleKeyDown }/>
+					step="any" onChange={ this.handleChange } />
 					<label htmlFor="salaire">
 						&nbsp; Dinars Tunisiens &nbsp;
 					</label>
