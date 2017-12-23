@@ -1,57 +1,40 @@
 import React, { Component } from 'react'
 import '../assets/css/BasicInput.css'
 
-
-const WAIT_INTERVAL = 500
-const ENTER_KEY = 13
-
 const SMIG_TND_2016 = 338
 const SMIG_TND_AN_2016 = SMIG_TND_2016 * 12
-
 
 export default class BasicInput extends Component {
 	constructor(props){
 		super(props)
-
-		this.state = {
-			typeEmploye: "fonctionnaire",
-			salaire: SMIG_TND_AN_2016,
-			periodeSalaire: "an",
-			statutFamilial: "celibataire",
-			nbEnfants: 0
-		}
-
 		this.handleChange = this.handleChange.bind(this)
 	}
 
-	
+	//handleChange argument is event
 	handleChange(event){
-		this.triggerChange(event)
-	}
-	
-	triggerChange(event) {
-		//form element id == this prop name
-		name = event.target.name
-		console.log("triggerChange for: " + event.target)
-		
-		this.setState({
+		const name = event.target.name
+		const partialState = {
 			[name]: event.target.value
-		})
-
-		console.log("state " + this.state.salaire)
-		console.log("event value to render " + event.target.value)
+		}
+		this.props.onUserChange(partialState)
 	}
 	
+
+	//value={ this.props.salaire }
+	//onChange={e => this.handleChange({salaire: e.target.value})}
+	//form onSubmit={() => console.log("!!! submit form") /* save your form here */}
+
 	render() {
 		//TN :
 		//Je suis [un/une] [fonctionnaire/employé-e/professionnel-le libéral-e].
 		//Je gagne [...] TND par [mois/an] [après/avant] paiement de l'impôt.
 		//Je suis [célibataire/marié/chef de famille].
 		//J'ai [0/1/2/3/plus de 4] enfant-s.
-		console.log("state after rendering " + this.state.salaire)
+		const nbEnfants = this.props.nbEnfants
+		console.log("state after rendering " + this.props.salaire + " - enfants " + nbEnfants)
+
 		return (
 			<form className="basic-input">
-
 				Je suis 
 				<select name="typeEmploye" >
 					<option value="employe">employé-e</option>
@@ -63,8 +46,8 @@ export default class BasicInput extends Component {
 				Je touche 
 				<fieldset>
 					<input id="salaire" name="salaire" component="input" type="number"
-					value={ this.state.salaire } min="0" max="9999999" placeholder={ SMIG_TND_AN_2016 } 
-					step="any" onChange={ this.handleChange } />
+					min="0" max="9999999" value={ this.props.salaire } placeholder={ SMIG_TND_AN_2016 } step="any"
+					onChange={ this.handleChange } />
 					<label htmlFor="salaire">
 						&nbsp; Dinars Tunisiens &nbsp;
 					</label>
