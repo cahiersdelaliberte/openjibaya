@@ -13,12 +13,13 @@ export default class BasicInput extends Component {
 	//handleChange argument is event
 	handleChange(event){
 		const name = event.target.name
+		const value = event.target.value
 		const partialState = {
-			[name]: event.target.value
+			[name]: value
 		}
+		console.log("handleChange> " + name + ": " + value)
 		this.props.onUserChange(partialState)
 	}
-	
 
 	//value={ this.props.salaire }
 	//onChange={e => this.handleChange({salaire: e.target.value})}
@@ -30,13 +31,12 @@ export default class BasicInput extends Component {
 		//Je gagne [...] TND par [mois/an] [après/avant] paiement de l'impôt.
 		//Je suis [célibataire/marié/chef de famille].
 		//J'ai [0/1/2/3/plus de 4] enfant-s.
-		const nbEnfants = this.props.nbEnfants
-		console.log("state after rendering " + this.props.salaire + " - enfants " + nbEnfants)
-
+		console.log(this.props)
+		
 		return (
 			<form className="basic-input">
 				Je suis 
-				<select name="typeEmploye" >
+				<select name="typeEmploye" value={ this.props.typeEmploye } onChange={ this.handleChange }>
 					<option value="employe">employé-e</option>
 					<option value="fonctionnaire">fonctionnaire</option>
 					<option value="professionnel_liberal" disabled="true">professionnel-le libéral-e</option>
@@ -59,7 +59,7 @@ export default class BasicInput extends Component {
 					</span>
 
 					<span>par</span>	
-					<select name="periodeSalaire" >
+					<select name="periodeSalaire" value={ this.props.periodeSalaire } onChange={ this.handleChange }>
 						<option value="mois">mois</option>
 						<option value="an">an</option>
 					</select>	
@@ -69,7 +69,7 @@ export default class BasicInput extends Component {
 				<br />
 				
 				Je suis
-				<select name="statutFamilial" >
+				<select name="statutFamilial" value={ this.props.statutFamilial } onChange={ this.handleChange }>
 					<option value="celibataire">célibataire</option>
 					<option value="marie">marié non chef de famille</option>
 					<option value="chef_de_famille">chef de famille</option>
@@ -78,7 +78,8 @@ export default class BasicInput extends Component {
 				
 				J&#39;ai 
 				<input id="nbEnfants" name="nbEnfants" component="input" type="number"
-					min="0" max="9999999" placeholder="0" step="any" />
+				min="0" max="9999999" value={ this.props.nbEnfants } placeholder="0" step="any"
+				onChange={ this.handleChange } />
 				enfant-s.<br />
 				
 			</form>
