@@ -44,10 +44,6 @@ export default class Results extends Component {
 	}
 
 	render() {
-		console.log("Results.jsx")
-		console.log("props: " + this.props.results.items)
-		console.log("state: " + this.state)
-
 		let defaultTextColour = '#ffffff',
 			defaultColour = '#4A89DC',
 			buttonStyle = {background: defaultColour, borderColor: defaultTextColour, color: defaultTextColour}

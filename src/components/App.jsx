@@ -39,7 +39,6 @@ export default class App extends React.Component {
 	}
 
   render() {
-    console.log("App state.results: " + this.state.results.salaire_imposable + " " + this.state.results.salaire_net_a_payer)
     var simulatorName = "OpenJibaya"
     var inputTouched = false
     var inputChanged = false
@@ -47,7 +46,7 @@ export default class App extends React.Component {
 
     return (
       <div className="widget">
-        <BasicInput salaire={ this.state.salaire } onUserChange={ this.handleChange } />
+        <BasicInput { ...this.state } onUserChange={ this.handleChange } />
         <Results results={ this.state.results } />
         <Affiliation />
       </div>
