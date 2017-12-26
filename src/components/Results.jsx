@@ -18,7 +18,8 @@ export default class Results extends Component {
 			salaire,
 			periodeSalaire,
 			statutFamilial,
-			nbEnfants
+			nbEnfants,
+			repartitionBudget,
 		} = this.props
 		
 		//console.log("typeEmploye " + typeEmploye)
@@ -76,7 +77,7 @@ export default class Results extends Component {
 						</div>
 						<br />
 						<br />
-						<BarChart results={this.props.results} />
+						<BarChart results={ this.props.results } repartitionBudget={ this.props.repartitionBudget }/>
 					</div>
 					:
 					<div/>

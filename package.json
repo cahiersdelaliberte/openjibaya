@@ -41,9 +41,11 @@
     "highcharts-exporting": "^0.1.2",
     "highcharts-more": "^0.1.2",
     "intl": "^1.2.5",
+    "json-loader": "^0.5.7",
     "react": "^16.2.0",
     "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.2.0",
-    "react-highcharts": "^15.0.0"
+    "react-highcharts": "^15.0.0",
+    "yaml-loader": "^0.5.0"
   }
 }

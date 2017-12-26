@@ -2,8 +2,9 @@ import React from 'react'
 import BasicInput from './BasicInput.jsx'
 import Results from './Results.jsx'
 import Affiliation from './Affiliation.jsx'
-import "../assets/css/main.css"
-import "../assets/css/reset.css"
+import '../assets/css/main.css'
+import '../assets/css/reset.css'
+import { loadYaml } from '../utils/yaml.js'
 
 
 
@@ -44,10 +45,12 @@ export default class App extends React.Component {
     var inputChanged = false
     //inputTouched={ inputTouched } inputChanged={ inputChanged } />
 
+    const repartition_budget = loadYaml('repartition_budget.yaml')
+
     return (
       <div className="widget">
         <BasicInput { ...this.state } onUserChange={ this.handleChange } />
-        <Results results={ this.state.results } />
+        <Results results={ this.state.results } repartitionBudget={ repartition_budget }/>
         <Affiliation />
       </div>
     );

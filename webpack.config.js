@@ -33,6 +33,10 @@ module.exports = {
         test: /\.(jpe?g|png|gif|svg)$/i,
         loader: 'url-loader?limit=10000!img-loader?progressive=true',
       },
+      {
+        test: /\.yaml$/,
+        loader: 'yaml-loader',
+      },
     ]
   },
   plugins: [HtmlWebpackPluginConfig]
