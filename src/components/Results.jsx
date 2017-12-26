@@ -77,7 +77,7 @@ export default class Results extends Component {
 						</div>
 						<br />
 						<br />
-						<BarChart results={ this.props.results } repartitionBudget={ this.props.repartitionBudget }/>
+						<BarChart year="2016" results={ this.props.results } repartitionBudget={ this.props.repartitionBudget }/>
 					</div>
 					:
 					<div/>
