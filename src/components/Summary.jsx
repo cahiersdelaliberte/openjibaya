@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 
+console.log("Summary.jsx")
+
+
 let Figure = ({figure, title, textColour}) =>
 	<ReactCSSTransitionGroup
 			transitionName="flash"
@@ -13,41 +16,44 @@ let Figure = ({figure, title, textColour}) =>
 			</span>
 		</ReactCSSTransitionGroup>
 
+let defaultColour = '#4A89DC'
+let defaultTextColour = '#ffffff',
+	lightenTextColour = defaultTextColour => defaultTextColour === '#ffffff' ? 'rgba(255, 255, 255, .85)' : '#333'
 
 export default class Summary extends Component {
+	constructor(props){
+		super(props)
+		let {
+			themeColours,
+			results,
+			humanizeFigures,
+			toggleSection,
+
+			typeEmploye,
+			salaire,
+			periodeSalaire,
+			statutFamilial,
+			nbEnfants,
+			handleOnButtonClick
+		} = this.props
+
+		// This binding is necessary to make `this` work in the callback
+		this.handleOnButtonClick = this.props.handleOnButtonClick.bind(this);
+	}
+
+	handleOnButtonClick(){
+		console.log("!	Summary - handleOnButtonClick")
+		this.props.handleOnButtonClick()
+	}
+
 	render() {
-		//let colour: '#4A89DC',
-		//textColour: '#000000',
-		//lighterTextColour: '#4A89DC'	
-	
-		let
-			{
-				//themeColours: {colour, textColour, lighterTextColour},
-				results,
-				results: {
-					salaire_super_brut, cout_du_travail,
-				},
-				typeEntreprise, typeSalaireEntré,
-				humanizeFigures: humanize,
-				toggleSection,
-				showDetails,
-			} = this.props,
-			labelTypeEntreprise = {
-				'entreprise_est_association_non_lucrative': 'association',
-				'entreprise': 'entreprise',
-			}[typeEntreprise],
-			correspondanceSalaires = {
-				'net': [ 'brut', 'Salaire brut', 'salaire_de_base' ],
-				'brut': [ 'net', 'Salaire net', 'salaire_net_a_payer' ],
-			}[typeSalaireEntré],
-			[ salaireTitle, salaireDescription, salaireVariable ] = correspondanceSalaires,
-			salaireFigure = results[salaireVariable],
-			paragraphBorderStyle = {borderColor: textColour},
-			buttonStyle = {borderColor: textColour, color: textColour}
+
+		let paragraphBorderStyle = {borderColor: defaultTextColour},
+			buttonStyle = {borderColor: defaultTextColour, color: defaultTextColour}
 
 		return (
 			<section className="simulation-summary">
-				<div className="content" style={{background: colour, color: lighterTextColour}}>
+				<div className="content" style={{background: defaultColour, color: defaultTextColour}}>
 					<div className="figures">
 						<p style={paragraphBorderStyle}>
 						
@@ -60,10 +66,9 @@ export default class Summary extends Component {
 					</div>
 					<button	type="button"
 						className="action show-details" autoComplete="off"
-						onClick={toggleSection}
+						onClick={ this.handleOnButtonClick }
 						style={buttonStyle} >
-						{showDetails ?
-							<span>Revenir à la saisie</span> :
+						{
 							<span>Voir le détail<br />des prélèvements</span>
 						}
 					</button>

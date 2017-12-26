@@ -29,8 +29,11 @@ module.exports = {
       {
         test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/
       },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loader: 'url-loader?limit=10000!img-loader?progressive=true',
+      },
     ]
   },
-  //add this line
   plugins: [HtmlWebpackPluginConfig]
 };

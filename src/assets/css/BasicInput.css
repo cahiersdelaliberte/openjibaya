@@ -4,31 +4,10 @@
 	text-align: center;
 }
 
-select[name="typeEntreprise"] {
-	width: 5.2em;
-}
-
-input[name="effectifEntreprise"] {
-	width: 3.5em;
-}
-
-input[name="codePostal"] {
-	max-width: 5.5em;
-}
-
-input[name="heuresParSemaine"] {
-	max-width: 2.3em;
-}
-
 label.dynamic-info {
 	font-size: 65%;
 	font-style: italic;
 }
-
-select[data-provides="employee"] {
-	width: 6.5em;
-}
-
 
 /* Enables the first input's help text to pop
 over the lasts of this group.
