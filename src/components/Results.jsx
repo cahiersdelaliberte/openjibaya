@@ -18,7 +18,8 @@ export default class Results extends Component {
 			salaire,
 			periodeSalaire,
 			statutFamilial,
-			nbEnfants
+			nbEnfants,
+			repartitionBudget,
 		} = this.props
 		
 		//console.log("typeEmploye " + typeEmploye)
@@ -63,7 +64,7 @@ export default class Results extends Component {
 								onClick={ this.handleOnPlusClick }
 								style={buttonStyle} >
 								{
-									<span>Et si la Loi de Finances n&#39;avait pas changé ?</span>
+									<span>Quelles différences entre Lois de Finances ?</span>
 								}
 							</button>
 							{ this.state.plusClicked ?
@@ -76,7 +77,7 @@ export default class Results extends Component {
 						</div>
 						<br />
 						<br />
-						<BarChart results={this.props.results} />
+						<BarChart year="2017" results={ this.props.results } repartitionBudget={ this.props.repartitionBudget }/>
 					</div>
 					:
 					<div/>
