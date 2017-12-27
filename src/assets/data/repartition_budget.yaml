@@ -35,7 +35,7 @@
   m_affaires_religieuses:
     name: MINISTERE DES AFFAIRES RELIGIEUSES
     percentage: 0.0032
-  presiDEnce_republique:
+  presidence_republique:
     name: PRESIDENCE DE LA REPUBLIQUE
     percentage: 0.0035
   m_femme_famille_enfance:
@@ -44,7 +44,7 @@
   m_tourisme_artisanat:
     name: MINISTERE DU TOURISME ET DE L'ARTISANAT
     percentage: 0.0040
-  presiDEnce_gouverment:
+  presidence_gouverment:
     name: PRESIDENCE DU GOUVERNEMENT
     percentage: 0.0038
   m_affaires_etrangeres:
@@ -56,7 +56,7 @@
   m_formation_professionnelle_emploi:
     name: MINISTERE DE LA FORMATION PROFESSIONNELLE ET DE L'EMPLOI
     percentage: 0.0107
-  DEpenses_imprevues_non_reparties:
+  depenses_imprevues_non_reparties:
     name: DEPENSES IMPREVUES ET NON REPARTIES
     percentage: 0.0294
   m_justice:
@@ -68,10 +68,10 @@
   m_education:
     name: MINISTERE DE L'EDUCATION
     percentage: 0.1553
-  interets_DEtte_publique: #name change?
+  interets_dette_publique: #name change?
     name: INTERETS DE LA DETTE PUBLIQUE
     percentage: 0.1860
-  m_DEv_invest_coop:
+  m_dev_invest_coop:
     name: MINISTERE DU DEVELOPPEMENT, DE L'INVESTISSEMENT ET DE LA COOPERATION INTERNATIONALE
     percentage: 0.0171
   m_transport:
@@ -95,7 +95,7 @@
   m_sante:
     name: MINISTERE DE LA SANTE
     percentage: 0.0556
-  m_DEfense_nationale:
+  m_defense_nationale:
     name: MINISTERE DE LA DEFENSE NATIONALE
     percentage: 0.0641
   m_interieur:
@@ -105,97 +105,97 @@
 2016:
   arp:
     name: ASSEMBLEE DES REPRESENTANTS DU PEUPLE
-    percentage: 0.02
+    percentage: 0.0012
   csm:
     name: CONSEIL SUPERIEUR DE LA MAGISTRATURE
-    percentage: 0.02
-  DEpenses_imprevues_non_reparties:
+    percentage: 0.00
+  depenses_imprevues_non_reparties:
     name: DEPENSES IMPREVUES ET NON REPARTIES
-    percentage: 0.02
-  DEtte_publique:
+    percentage: 0.0140
+  dette_publique:
     name: DETTE PUBLIQUE
-    percentage: 0.02
+    percentage: 0.1809
   ivd:
     name: INSTANCE DE LA VERITE ET DE LA DIGNITE
-    percentage: 0.02
+    percentage: 0.0004
   isie:
     name: INSTANCE SUPERIEURE INDEPENDANTE POUR LES ELECTIONS
-    percentage: 0.02
+    percentage: 0.0024
   m_argriculture_res_hydrauliques_peche:
     name: MINISTERE DE L'AGRICULTURE, DES RESSOURCES HYDRAULIQUES ET DE LA PECHE
-    percentage: 0.05
+    percentage: 0.0426
   m_education:
     name: MINISTERE DE L'EDUCATION
-    percentage: 0.17
+    percentage: 0.1596
   m_enseignement_sup_recherche_scientifique:
     name: MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE SCIENTIFIQUE
-    percentage: 0.08
-  m_env_DEveloppement_durable:
+    percentage: 0.0521
+  m_env_developpement_durable:
     name: MINISTERE DE L'ENVIRONNEMENT ET DU DEVELOPPEMENT DURABLE
-    percentage: 0.08
+    percentage: 0.0057
   m_equipement_habitat_amenagement_territoire:
     name: MINISTERE DE L'EQUIPEMENT, DE L'HABITAT ET DE L'AMENAGEMENT DU TERRITOIRE
-    percentage: 0.08
+    percentage: 0.0368
   m_industrie_energie_mines:
     name: MINISTERE DE L'INDUSTRIE, DE L'ENERGIE ET DES MINES
-    percentage: 0.08
+    percentage: 0.0245
   m_interieur:
     name: MINISTERE DE L'INTERIEUR
-    percentage: 0.05
-  m_culture_sauvegarDE_patrimoine:
+    percentage: 0.0983
+  m_culture_sauvegarde_patrimoine:
     name: MINISTERE DE LA CULTURE ET DE LA SAUVEGARDE DU PATRIMOINE MINISTERE DE LA CULTURE ET DE LA SAUVEGARDE DU PATRIMOINE
-    percentage: 0.01
-  m_DEfense_nationale:
+    percentage: 0.0079
+  m_defense_nationale:
     name: MINISTERE DE LA DEFENSE NATIONALE
-    percentage: 0.02
+    percentage: 0.0735
   m_femme_famille_enfance:
     name: MINISTERE DE LA FEMME, DE LA FAMILLE ET DE L'ENFANCE
-    percentage: 0.01
+    percentage: 0.0040
   m_formation_professionnelle_emploi:
     name: MINISTERE DE LA FORMATION PROFESSIONNELLE ET DE L'EMPLOI
-    percentage: 0.01
+    percentage: 0.0103
   m_jeunesse_sports:
     name: MINISTERE DE LA JEUNESSE ET DES SPORTS
-    percentage: 0.01
+    percentage: 0.0189
   m_justice:
     name: MINISTERE DE LA JUSTICE
-    percentage: 0.01
+    percentage: 0.0173
   m_sante:
     name: MINISTERE DE LA SANTE
-    percentage: 0.01
+    percentage: 0.0618
   m_affaires_etrangeres:
     name: MINISTERE DES AFFAIRES ETRANGERES
-    percentage: 0.01
+    percentage: 0.0072
   m_affaires_religieuses:
     name: MINISTERE DES AFFAIRES RELIGIEUSES
-    percentage: 0.01
+    percentage: 0.0031
   m_affaires_sociales:
     name: MINISTERE DES AFFAIRES SOCIALES
-    percentage: 0.01
+    percentage: 0.0308
   m_domaines_etat_affaires_foncieres:
     name: MINISTERE DES DOMAINES DE L'ETAT ET DES AFFAIRES FONCIERES
-    percentage: 0.01
+    percentage: 0.0015
   m_finances:
     name: MINISTERE DES FINANCES
-    percentage: 0.02
+    percentage: 0.0287
   m_tech_com_economie_numerique:
     name: MINISTERE DES TECHNOLOGIES DE LA COMMUNICATION ET DE L'ECONOMIE NUMERIQUE
-    percentage: 0.02
+    percentage: 0.0013
   m_commerce:
     name: MINISTERE DU COMMERCE
-    percentage: 0.02
-  m_DEv_invest_coop:
+    percentage: 0.0590
+  m_dev_invest_coop:
     name: MINISTERE DU DEVELOPPEMENT, DE L'INVESTISSEMENT ET DE LA COOPERATION INTERNATIONALE
-    percentage: 0.05
+    percentage: 0.0200
   m_tourisme_artisanat:
     name: MINISTERE DU TOURISME ET DE L'ARTISANAT
-    percentage: 0.03
+    percentage: 0.0048
   m_transport:
     name: MINISTERE DU TRANSPORT
-    percentage: 0.01
-  presiDEnce_republique:
+    percentage: 0.0229
+  presidence_republique:
     name: PRESIDENCE DE LA REPUBLIQUE
-    percentage: 0.01
-  presiDEnce_gouverment:
+    percentage: 0.0034
+  presidence_gouverment:
     name: PRESIDENCE DU GOUVERNEMENT
-    percentage: 0.01
+    percentage: 0.0050
