@@ -1,14 +1,26 @@
 import React, { Component } from 'react'
 import ReactHighcharts from 'react-highcharts' // Expects that Highcharts was loaded in the code.
 
+const MINISTERE_NAME_PREFIX = 'MINISTERE'
+const MINIMAL_PERCENTAGE = 0.01
+
+
+function formatNumber(number){
+	return Math.round(number * 100)/100
+}
+
 
 function calculateRepartition(repartitionBudgetAnnuel, impot){
 	var series = []
+	var partName, partPercentage	
 	for (var part in repartitionBudgetAnnuel){
+		partName = repartitionBudgetAnnuel[part]['name']
+		partPercentage = repartitionBudgetAnnuel[part]['percentage']
+
 		series.push({
-			name: repartitionBudgetAnnuel[part]['name'],
-			data: [repartitionBudgetAnnuel[part]['percentage'] * impot],
-			visible: true
+			name: partName,
+			data: [formatNumber(partPercentage * impot)],
+			visible: (partPercentage >= MINIMAL_PERCENTAGE) || (! partName.startsWith(MINISTERE_NAME_PREFIX))
 		})
 	}
 	return series

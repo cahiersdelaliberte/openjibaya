@@ -1,16 +1,4 @@
 2017:
-  m_energie_mines_energies_renouvelables:
-    name: MINISTERE DE L'ENERGIE, DES MINES ET DES ENERGIES RENOUVELABLES
-    percentage: 0.0214
-  m_industrie_commerce:
-    name: MINISTERE DE L'INDUSTRIE ET DU COMMERCE
-    percentage: 0.0563
-  m_fonction_publique_gouvernance:
-    name: MINISTERE DE LA FONCTION PUBLIQUE ET DE LA GOUVERNANCE
-    percentage: 0.0008
-  m_affaires_locales_environnement:
-    name: MINISTERE DES AFFAIRES LOCALES ET DE L'ENVIRONNEMENT
-    percentage: 0.0229
   m_relations_instances_constitutionnelles_societe_civile_droits_homme:
     name: MINISTERE DES RELATIONS AVEC LES INSTANCES CONSTITUTIONNELLES ET DE LA SOCIETE CIVILE ET DES DROITS DE L'HOMME
     percentage: 0.0001
@@ -23,6 +11,9 @@
   ivd:
     name: INSTANCE DE LA VERITE ET DE LA DIGNITE
     percentage: 0.0003
+  m_fonction_publique_gouvernance:
+    name: MINISTERE DE LA FONCTION PUBLIQUE ET DE LA GOUVERNANCE
+    percentage: 0.0008
   arp:
     name: ASSEMBLEE DES REPRESENTANTS DU PEUPLE
     percentage: 0.0009
@@ -38,15 +29,15 @@
   presidence_republique:
     name: PRESIDENCE DE LA REPUBLIQUE
     percentage: 0.0035
-  m_femme_famille_enfance:
-    name: MINISTERE DE LA FEMME, DE LA FAMILLE ET DE L'ENFANCE
-    percentage: 0.0043
-  m_tourisme_artisanat:
-    name: MINISTERE DU TOURISME ET DE L'ARTISANAT
-    percentage: 0.0040
   presidence_gouverment:
     name: PRESIDENCE DU GOUVERNEMENT
     percentage: 0.0038
+  m_tourisme_artisanat:
+    name: MINISTERE DU TOURISME ET DE L'ARTISANAT
+    percentage: 0.0040
+  m_femme_famille_enfance:
+    name: MINISTERE DE LA FEMME, DE LA FAMILLE ET DE L'ENFANCE
+    percentage: 0.0043
   m_affaires_etrangeres:
     name: MINISTERE DES AFFAIRES ETRANGERES
     percentage: 0.0063
@@ -56,51 +47,60 @@
   m_formation_professionnelle_emploi:
     name: MINISTERE DE LA FORMATION PROFESSIONNELLE ET DE L'EMPLOI
     percentage: 0.0107
-  depenses_imprevues_non_reparties:
-    name: DEPENSES IMPREVUES ET NON REPARTIES
-    percentage: 0.0294
-  m_justice:
-    name: MINISTERE DE LA JUSTICE
-    percentage: 0.0173
   m_jeunesse_sports: #name change
     name: MINISTERE DES AFFAIRES LA JEUNESSE ET DU SPORT
     percentage: 0.0168
-  m_education:
-    name: MINISTERE DE L'EDUCATION
-    percentage: 0.1553
-  interets_dette_publique: #name change?
-    name: INTERETS DE LA DETTE PUBLIQUE
-    percentage: 0.1860
+  m_justice:
+    name: MINISTERE DE LA JUSTICE
+    percentage: 0.0173
   m_dev_invest_coop:
     name: MINISTERE DU DEVELOPPEMENT, DE L'INVESTISSEMENT ET DE LA COOPERATION INTERNATIONALE
     percentage: 0.0171
   m_transport:
     name: MINISTERE DU TRANSPORT
     percentage: 0.0208
+  m_energie_mines_energies_renouvelables:
+    name: MINISTERE DE L'ENERGIE, DES MINES ET DES ENERGIES RENOUVELABLES
+    percentage: 0.0214
+  m_affaires_locales_environnement:
+    name: MINISTERE DES AFFAIRES LOCALES ET DE L'ENVIRONNEMENT
+    percentage: 0.0229
   m_finances:
     name: MINISTERE DES FINANCES
     percentage: 0.0253
-  m_affaires_sociales:
-    name: MINISTERE DES AFFAIRES SOCIALES
-    percentage: 0.0454
-  m_equipement_habitat_amenagement_territoire:
-    name: MINISTERE DE L'EQUIPEMENT, DE L'HABITAT ET DE L'AMENAGEMENT DU TERRITOIRE
-    percentage: 0.0502
+  depenses_imprevues_non_reparties:
+    name: DEPENSES IMPREVUES ET NON REPARTIES
+    percentage: 0.0294
   m_argriculture_res_hydrauliques_peche:
     name: MINISTERE DE L'AGRICULTURE, DES RESSOURCES HYDRAULIQUES ET DE LA PECHE
     percentage: 0.0415
   m_enseignement_sup_recherche_scientifique:
     name: MINISTERE DE L'ENSEIGNEMENT SUPERIEUR ET DE LA RECHERCHE SCIENTIFIQUE
     percentage: 0.0435
+  m_affaires_sociales:
+    name: MINISTERE DES AFFAIRES SOCIALES
+    percentage: 0.0454
+  m_equipement_habitat_amenagement_territoire:
+    name: MINISTERE DE L'EQUIPEMENT, DE L'HABITAT ET DE L'AMENAGEMENT DU TERRITOIRE
+    percentage: 0.0502
   m_sante:
     name: MINISTERE DE LA SANTE
     percentage: 0.0556
+  m_industrie_commerce:
+    name: MINISTERE DE L'INDUSTRIE ET DU COMMERCE
+    percentage: 0.0563
   m_defense_nationale:
     name: MINISTERE DE LA DEFENSE NATIONALE
     percentage: 0.0641
   m_interieur:
     name: MINISTERE DE L'INTERIEUR
     percentage: 0.0813
+  m_education:
+    name: MINISTERE DE L'EDUCATION
+    percentage: 0.1553
+  interets_dette_publique: #name change?
+    name: INTERETS DE LA DETTE PUBLIQUE
+    percentage: 0.1860
 
 2016:
   csm:
