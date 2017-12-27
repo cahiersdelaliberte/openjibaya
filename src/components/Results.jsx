@@ -64,7 +64,7 @@ export default class Results extends Component {
 								onClick={ this.handleOnPlusClick }
 								style={buttonStyle} >
 								{
-									<span>Et si la Loi de Finances n&#39;avait pas changé ?</span>
+									<span>Quelles différences entre Lois de Finances ?</span>
 								}
 							</button>
 							{ this.state.plusClicked ?
@@ -77,7 +77,7 @@ export default class Results extends Component {
 						</div>
 						<br />
 						<br />
-						<BarChart year="2016" results={ this.props.results } repartitionBudget={ this.props.repartitionBudget }/>
+						<BarChart year="2017" results={ this.props.results } repartitionBudget={ this.props.repartitionBudget }/>
 					</div>
 					:
 					<div/>

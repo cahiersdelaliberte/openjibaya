@@ -50,7 +50,7 @@
   m_affaires_etrangeres:
     name: MINISTERE DES AFFAIRES ETRANGERES
     percentage: 0.0063
-  m_:
+  m_affaires_culturelles:
     name: Ministère des affaires culturelles
     percentage: 0.0081
   m_formation_professionnelle_emploi:
