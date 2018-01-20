@@ -4,7 +4,7 @@ import Summary from './Summary.jsx'
 import BarChart from './BarChart.jsx'
 import WaterfallChart from './WaterfallChart.jsx'
 
-import { askOpenFisca } from '../utils/openfisca.js'
+import { request, askOpenFisca } from '../utils/openfisca.js'
 
 import '../assets/css/Results.css'
 
@@ -38,7 +38,7 @@ export default class Results extends Component {
 
 	handleOnButtonClick(){
 		console.log("!	Results - handleOnButtonClick")
-		var calculatedSalaireImposable = askOpenFisca()
+		var calculatedSalaireImposable = request(1225) //request(salaire)//askOpenFisca()
 		console.log("salaire_imposable: " + calculatedSalaireImposable)
 		this.setState({ buttonClicked: true })
 	}
