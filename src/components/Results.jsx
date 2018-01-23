@@ -4,7 +4,7 @@ import Summary from './Summary.jsx'
 import BarChart from './BarChart.jsx'
 import WaterfallChart from './WaterfallChart.jsx'
 
-import { request, askOpenFisca } from '../utils/openfisca.js'
+import { request, askOpenFisca, newXmlHttpRequest, send, updateSalaires } from '../utils/openfisca.js'
 
 import '../assets/css/Results.css'
 
@@ -36,11 +36,51 @@ export default class Results extends Component {
 		}
 	}
 
+	updateSalaireImposable(salaireImposable){
+		console.log("updateSalaireImposable")
+		this.props.results['salaire_imposable'] = salaireImposable
+	}
+	
 	handleOnButtonClick(){
 		console.log("!	Results - handleOnButtonClick")
-		var calculatedSalaireImposable = request(1225) //request(salaire)//askOpenFisca()
-		console.log("salaire_imposable: " + calculatedSalaireImposable)
-		this.setState({ buttonClicked: true })
+
+		//OK console.log(this.props.results.salaire_imposable)
+		//OK console.log(this.props.results['salaire_imposable'])
+		var xhr = newXmlHttpRequest()
+		
+		xhr.onreadystatechange = function(event) {
+			if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+				var json = JSON.parse(xhr.responseText)
+				console.log("successful response:")
+				console.log(json)
+				//updateSalaires(10)
+				//updateSalaireImposable(json.individus.openjibayiste.salaire_imposable['2017-12'])
+				//this.props.results['salaire_imposable'] = json.individus.openjibayiste.salaire_imposable['2017-12']
+				//var results = updateSalaires(salaireImposable)
+				//this.props.results['salaire_imposable'] = results['salaire_imposable']
+
+				this.setState({ buttonClicked: true })
+			}
+
+			if (xhr.status === 404) {
+				console.log("issue response: " + xhr.status)
+			}
+		}
+		
+		send(xhr, 1225)
+		//var requestResult = request(1225)
+		//console.log("requestResult " + requestResult)
+		//this.props.results['salaire_imposable'] = requestResult
+		//console.log(this.props.results)
+
+		//request(1225, updateSalaires) //request(salaire)//askOpenFisca()
+		//var salaireImposable = this.props.results.salaire_imposable
+		//console.log("salaire_imposable: " + salaireImposable)
+		//if(salaireImposable){
+		//	this.setState({ buttonClicked: true })
+		//} else {
+		//	console.log("...waiting for salaire imposable")
+		//}
 	}
 
 	handleOnPlusClick(){

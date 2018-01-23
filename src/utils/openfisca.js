@@ -40,36 +40,82 @@ function buildJsonRequest(salaireNetAPayer){
 }
 
 
-export function request(salaireNetAPayer) {
-	const xhr = new XMLHttpRequest();
-	xhr.timeout = 2000;
-	xhr.onreadystatechange = function(e) {
-		if (xhr.readyState === 4) {
-			if (xhr.status === 200) {
-				// Code here for the server answer when successful
-				var jsonContent = xhr.responseText
-				var json = JSON.parse(jsonContent)
-				console.log("successful response:")
-				console.log(json)
-				//return json.individus.openjibayiste.salaire_imposable['2017-12']
-			} else {
-				// Code here for the server answer when not successful
-				console.log(xhr.status)
-				var jsonContent = xhr.responseText
-				var json = JSON.parse(jsonContent)
-				console.log("issue response:")
-				console.log(json)
-			}
-		} else {
-			console.log(xhr.readyState)
-		}
+function callback(event){
+	alert("une erreur est survenue")
+}
+
+
+export function updateSalaires(salaireImposable){
+	console.log("updateSalaires")
+	const salaires = {
+		salaire_imposable: salaireImposable,
+		salaire_net_a_payer: 14700
 	}
+	console.log(salaires)
+	return salaires
+}
+
+export function newXmlHttpRequest(){
+	var xhr = new XMLHttpRequest();
+	const asynchronous = true
+
+	xhr.timeout = 2000;
 	xhr.ontimeout = function () {
 		// Well, it took too long do some code here to handle that
 		console.log("zzz")
 	}
-	xhr.open('post', REQUEST_URL, true)
-	xhr.send(buildJsonRequest(salaireNetAPayer));
+	
+	xhr.addEventListener("error", callback, false)
+	return xhr
+}
+
+export function send(xhr, salaireNetAPayer){
+	const asynchronous = true
+	xhr.open('post', REQUEST_URL, asynchronous)
+	xhr.setRequestHeader('Content-Type', 'application/json')
+	xhr.send(buildJsonRequest(salaireNetAPayer))
+}
+
+
+export function request(salaireNetAPayer) {
+	var xhr = new XMLHttpRequest();
+	const asynchronous = true
+
+	xhr.onreadystatechange = function(event) {
+		//console.log("state " + xhr.readyState)
+		//console.log("status " + xhr.status)
+
+		if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+				// Code here for the server answer when successful
+				var json = JSON.parse(xhr.responseText)
+				console.log("successful response:")
+				console.log(json)
+				var salaireImposable = json.individus.openjibayiste.salaire_imposable['2017-12']
+				var results = updateSalaires(salaireImposable)
+				return results['salaire_imposable']
+		}
+
+		if (xhr.status === 404) {
+			// Code here for the server answer when not successful
+			//var json = JSON.parse(xhr.responseText)
+			console.log("issue response:")
+			console.log(xhr.status)
+		}
+	}
+	
+	
+	xhr.timeout = 2000;
+	xhr.ontimeout = function () {
+		// Well, it took too long do some code here to handle that
+		console.log("zzz")
+	}
+	
+	xhr.addEventListener("error", callback, false)
+	
+	
+	xhr.open('post', REQUEST_URL, asynchronous)
+	xhr.setRequestHeader('Content-Type', 'application/json')
+	xhr.send(buildJsonRequest(salaireNetAPayer))
 }
 
 
