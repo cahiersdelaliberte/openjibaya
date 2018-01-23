@@ -1,6 +1,53 @@
+require('core-js/fn/promise')
+
 const OPENFISCA_WEB_API_URL = "https://www.openfisca.tn/api/v0.13.0/"
 const OPENFISCA_WEB_API_ENDPOINT = "calculate"
 const REQUEST_URL = OPENFISCA_WEB_API_URL + OPENFISCA_WEB_API_ENDPOINT
+
+
+//old headers = 'x-OpenFisca-Extensions': 'de_net_a_brut'
+export function newPromise(){
+	return new Promise( 
+		(resolve, reject) =>
+		fetch(REQUEST_URL)
+			.then(response => {
+				if (!response.ok) {
+					const error = new Error(response.statusText)
+					error.response = response
+					reject(error)
+				}
+				return response.json()
+			})
+			.then(json => resolve(json))
+		.catch(reject)
+	)
+}
+
+function fetchCalculate(parameterId, apiBaseUrl = config.apiBaseUrl) {
+	return fetchJson(`${apiBaseUrl}/calculate`)
+}
+
+//import fetch from "isomorphic-fetch"
+function fetchJson(url, options) {
+  return fetch(url, options)
+    .then(response => response.json()
+      .then(data => {
+        if (response.status >= 200 && response.status < 300) {
+          return {
+            data,
+            'country-package': response.headers.get('country-package'),
+            'country-package-version': response.headers.get('country-package-version'),
+          }
+        }
+        if (data.error) {
+          throw new Error(JSON.stringify(data.error))
+        }
+        throw new Error(JSON.stringify({error: 'Unexpected return code ' + response.status}))
+      })
+  )
+}
+
+
 
 
 function buildQuestion(salaireNetAPayer){
