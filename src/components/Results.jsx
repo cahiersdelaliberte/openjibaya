@@ -14,17 +14,9 @@ let numberFormat = new Intl.NumberFormat('fr-FR').format
 export default class Results extends Component {
 	constructor(props){
 		super(props)
-
-		let {
-			typeEmploye,
-			salaire,
-			periodeSalaire,
-			statutFamilial,
-			nbEnfants,
-			repartitionBudget,
-		} = this.props
 		
 		//console.log("typeEmploye " + typeEmploye)
+		console.log("salaire " + this.props.salaire)
 		
 		// This binding is necessary to make `this` work in the callback
 		this.handleOnButtonClick = this.handleOnButtonClick.bind(this)
@@ -43,8 +35,8 @@ export default class Results extends Component {
 	
 	handleOnButtonClick(){
 		console.log("!	Results - handleOnButtonClick")
-
-		fetchCalculate().then(response => { 
+		console.log("salaire " + this.props.salaire)
+		fetchCalculate(this.props.salaire).then(response => { 
 			console.log("response data "+ response.data)
 		})
 	}
@@ -55,6 +47,9 @@ export default class Results extends Component {
 	}
 
 	render() {
+		console.log("Results : ")
+		console.log(this.props)
+
 		let defaultTextColour = '#ffffff',
 			defaultColour = '#4A89DC',
 			buttonStyle = {background: defaultColour, borderColor: defaultTextColour, color: defaultTextColour}

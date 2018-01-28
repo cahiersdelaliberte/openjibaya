@@ -21,7 +21,7 @@ export default class App extends React.Component {
     	// typeSalaireEntre: 'brut',
     	// salaireNetAPayer: smic_tnd,
 		typeEmploye: "fonctionnaire",
-		salaire: SMIG_TND_AN_2016,
+		salaire: SMIG_TND_2016,
 		periodeSalaire: "an",
 		statutFamilial: "celibataire",
 		nbEnfants: 0,
@@ -32,14 +32,23 @@ export default class App extends React.Component {
 		}
     }
     this.handleChange = this.handleChange.bind(this)
+    console.log('App')
+    console.log(this.state.salaire)
   }
 
   	//see handleChange argument struct
 	handleChange(partialState){
+		console.log("App handleChange")
+		//console.log(this.state)
+		//console.log("before " + this.state.salaire)
 		this.setState(partialState)
+		//console.log("after " + this.state.salaire)
 	}
 
   render() {
+	console.log("App : ")
+	console.log(this.state)
+
     var simulatorName = "OpenJibaya"
     var inputTouched = false
     var inputChanged = false
@@ -50,7 +59,7 @@ export default class App extends React.Component {
     return (
       <div className="widget">
         <BasicInput { ...this.state } onUserChange={ this.handleChange } />
-        <Results results={ this.state.results } repartitionBudget={ repartition_budget }/>
+        <Results    { ...this.state } repartitionBudget={ repartition_budget }/>
         <Affiliation />
       </div>
     );
