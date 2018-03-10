@@ -35,10 +35,15 @@ export default class Results extends Component {
 	
 	handleOnButtonClick(){
 		console.log("!	Results - handleOnButtonClick")
+		console.log(this.state)
+
 		console.log("salaire " + this.props.salaire)
 		fetchCalculate(this.props.salaire).then(response => { 
-			console.log("response data "+ response.data)
+			console.log("response ^^ ")
+			console.log(response['individus']['openjibayiste']['salaire_imposable']['2017-12'])
+			console.log(response['individus']['openjibayiste']['salaire_net_a_payer']['2017-12'])
 		})
+		this.setState({ buttonClicked: true })
 	}
 
 	handleOnPlusClick(){
@@ -53,6 +58,8 @@ export default class Results extends Component {
 		let defaultTextColour = '#ffffff',
 			defaultColour = '#4A89DC',
 			buttonStyle = {background: defaultColour, borderColor: defaultTextColour, color: defaultTextColour}
+		console.log("Button clicked?")
+		console.log(this.state.buttonClicked)
 		return (
 			<div>
 				<Summary {...this.props} handleOnButtonClick={ this.handleOnButtonClick } />
@@ -60,7 +67,7 @@ export default class Results extends Component {
 				{ this.state.buttonClicked ?
 					<div>
 						<br />
-						<WaterfallChart />
+						<WaterfallChart results={ this.props.results }/>
 						<br />
 						<br />
 						<div className="figures" align="center">

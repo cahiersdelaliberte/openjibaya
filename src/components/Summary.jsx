@@ -56,7 +56,6 @@ export default class Summary extends Component {
 				<div className="content" style={{background: defaultColour, color: defaultTextColour}}>
 					<div className="figures">
 						<p style={paragraphBorderStyle}>
-						
 							Tunisie
 							<br />
 							Où va votre impôt ?
