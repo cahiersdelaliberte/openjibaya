@@ -1,0 +1,35 @@
+{
+  "individus": { 
+    "openjibayiste": {
+      "marie" : {
+        "2017": false
+      },
+      "categorie_salarie" : {
+        "ETERNITY" : 0
+      },
+      "salaire_imposable" : {
+        "2017-12": 1000
+      },
+      "cotisations_salarie" : {
+          "2017-12": null
+      },
+      "salaire_de_base" : {
+          "2017-12": null
+      }
+    }
+  },
+  "foyers_fiscaux": {
+    "foyer_fiscal_1": {
+      "declarants": [
+        "openjibayiste"
+      ]
+    }
+  },
+  "menages": {
+    "menage_1": {
+      "personne_de_reference": [
+          "openjibayiste"
+      ]
+    }
+  }
+}
