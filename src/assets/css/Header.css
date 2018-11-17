@@ -1,0 +1,57 @@
+header {
+    font-family: "Helvetica Neue",-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: #fff;
+    
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    background: rgb(74, 137, 220);
+    border-radius: 0;
+    margin: 0 0em 3em 0em;
+}
+
+ul {
+    font-size: 0.5em;
+    list-style-type: none;
+    margin: 0.4em;
+    min-height: 3em;
+    display: flex;
+    align-items : center;
+}
+
+li + li {
+    margin-left: 0.5em;
+}
+
+li {
+    display: inline;
+    list-style: none;
+    margin: 1em;
+
+}
+
+.menu-item {
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: .2em;
+    display: inline-block;
+    padding: 0.25em 1em;
+    line-height: 1.5;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    text-decoration: none;	
+}
+
+@media (max-width: 720px) {
+    header{
+        flex-direction: column;
+    }
+    ul {
+        padding: 0;
+        flex-direction: column;
+        align-items: center;
+    }
+}

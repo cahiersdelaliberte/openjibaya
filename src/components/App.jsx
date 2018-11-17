@@ -1,11 +1,13 @@
 import React from 'react'
+import { loadYaml } from '../utils/yaml.js'
+
+import Header from './Header.jsx'
 import BasicInput from './BasicInput.jsx'
 import Results from './Results.jsx'
 import Affiliation from './Affiliation.jsx'
+
 import '../assets/css/main.css'
 import '../assets/css/reset.css'
-import { loadYaml } from '../utils/yaml.js'
-
 
 
 const SMIG_TND_2016 = 338
@@ -58,6 +60,7 @@ export default class App extends React.Component {
 
     return (
       <div className="widget">
+        <Header />
         <BasicInput { ...this.state } onUserChange={ this.handleChange } />
         <Results    { ...this.state } repartitionBudget={ repartition_budget }/>
         <Affiliation />
