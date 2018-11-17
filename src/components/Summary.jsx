@@ -58,7 +58,7 @@ export default class Summary extends Component {
 						<p style={paragraphBorderStyle}>
 							Tunisie
 							<br />
-							Où va votre impôt ?
+							Que finance votre impôt ?
 							<br />
 						
 						</p>
