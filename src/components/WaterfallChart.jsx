@@ -85,14 +85,10 @@ export default class WaterfallChart extends Component {
 		//impots = this.props.results.irpp,
 		//cotisations = this.props.results.cotisations_employeur + this.props.results.cotisations_salarie 
 
-		console.log('WaterfallChart')
 		var salaireNetAPayer = this.props.results['salaire_net_a_payer']
 		var salaireImposable = salaireNetAPayer + 500
-		console.log(salaireImposable)
 		var salaireDeBasePrimes = salaireImposable + 500
-		console.log(salaireDeBasePrimes)
 		var salaireSuperBrut = salaireDeBasePrimes + 500
-		console.log(salaireSuperBrut)
 
 		return (
 				<ReactHighcharts config = {

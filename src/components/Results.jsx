@@ -36,12 +36,19 @@ export default class Results extends Component {
 	handleOnButtonClick(){
 		console.log("!	Results - handleOnButtonClick")
 		console.log(this.state)
+		console.log("salaire: " + this.props.salaire)
+		console.log("results: ")
+		console.log(this.props.results)
 
-		console.log("salaire " + this.props.salaire)
-		fetchCalculate(this.props.salaire).then(response => { 
+		const PERIOD = "2017-12"
+		fetchCalculate(PERIOD, this.props.salaire).then(response => { 
 			console.log("response ^^ ")
-			console.log(response['individus']['openjibayiste']['salaire_imposable']['2017-12'])
+			console.log(response)
+			
 			console.log(response['individus']['openjibayiste']['salaire_net_a_payer']['2017-12'])
+			console.log(response['individus']['openjibayiste']['salaire_imposable']['2017-12'])
+			console.log(response['individus']['openjibayiste']['salaire_de_base']['2017-12']) //+ primes ?
+			console.log(response['individus']['openjibayiste']['salaire_super_brut']['2017-12'])
 		})
 		this.setState({ buttonClicked: true })
 	}
