@@ -39,7 +39,7 @@ function draw(salaireNetAPayer, salaireImposable, salaireDeBasePrimes, salaireSu
 			upColor: Highcharts.getOptions().colors[2],
 			color: Highcharts.getOptions().colors[3],
 			data: [{
-				name: 'Salaire Net A Payer',
+				name: 'Salaire Net Perçu',
 				y: salaireNetAPayer,
 				color: Highcharts.getOptions().colors[1]
 			}, {
