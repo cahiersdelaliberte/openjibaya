@@ -1,0 +1,56 @@
+{
+  "individus": { 
+    "openjibayiste": {
+      "marie" : {
+        "2017": true
+      },
+      "categorie_salarie" : {
+        "ETERNITY" : 0
+      },
+      "salaire_net_a_payer": {
+        "2017-12": 1225
+      },
+      "irpp_mensuel_salarie" : {
+          "2017-12": null
+      },
+      "salaire_imposable" : {
+        "2017-12": null
+      },
+      "cotisations_salarie" : {
+          "2017-12": null
+      },
+      "salaire_de_base" : {
+          "2017-12": null
+      },
+      "primes" : {
+          "2017-12": null
+      },
+      "cotisations_employeur" : {
+          "2017-12": null
+      },
+      "salaire_super_brut" : {
+          "2017-12": null
+      }
+    }
+  },
+  "foyers_fiscaux": {
+    "foyer_fiscal_1": {
+      "declarants": [
+        "openjibayiste"
+      ],
+      "nb_enf": {
+          "2017": 5
+      },
+      "chef_de_famille" : {
+          "2017": true
+      }
+    }
+  },
+  "menages": {
+    "menage_1": {
+      "personne_de_reference": [
+          "openjibayiste"
+      ]
+    }
+  }
+}

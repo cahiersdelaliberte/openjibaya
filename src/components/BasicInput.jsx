@@ -10,7 +10,6 @@ export default class BasicInput extends Component {
 		this.handleChange = this.handleChange.bind(this)
 	}
 
-	//handleChange argument is event
 	handleChange(event){
 		const name = event.target.name
 		const value = event.target.value
@@ -18,7 +17,9 @@ export default class BasicInput extends Component {
 			[name]: value
 		}
 		console.log("handleChange> " + name + ": " + value)
+		console.log("avant " +  this.props.salaire)
 		this.props.onUserChange(partialState)
+		console.log("après " + this.props.salaire)
 	}
 
 	//value={ this.props.salaire }
@@ -31,6 +32,7 @@ export default class BasicInput extends Component {
 		//Je gagne [...] TND par [mois/an] [après/avant] paiement de l'impôt.
 		//Je suis [célibataire/marié/chef de famille].
 		//J'ai [0/1/2/3/plus de 4] enfant-s.
+		console.log("BasicInput : ")
 		console.log(this.props)
 		
 		return (

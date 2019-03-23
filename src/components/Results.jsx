@@ -4,6 +4,8 @@ import Summary from './Summary.jsx'
 import BarChart from './BarChart.jsx'
 import WaterfallChart from './WaterfallChart.jsx'
 
+import { fetchCalculate } from '../utils/openfisca.js'
+
 import '../assets/css/Results.css'
 
 
@@ -12,17 +14,9 @@ let numberFormat = new Intl.NumberFormat('fr-FR').format
 export default class Results extends Component {
 	constructor(props){
 		super(props)
-
-		let {
-			typeEmploye,
-			salaire,
-			periodeSalaire,
-			statutFamilial,
-			nbEnfants,
-			repartitionBudget,
-		} = this.props
 		
 		//console.log("typeEmploye " + typeEmploye)
+		console.log("salaire " + this.props.salaire)
 		
 		// This binding is necessary to make `this` work in the callback
 		this.handleOnButtonClick = this.handleOnButtonClick.bind(this)
@@ -34,8 +28,28 @@ export default class Results extends Component {
 		}
 	}
 
+	updateSalaireImposable(salaireImposable){
+		console.log("updateSalaireImposable")
+		this.props.results['salaire_imposable'] = salaireImposable
+	}
+	
 	handleOnButtonClick(){
 		console.log("!	Results - handleOnButtonClick")
+		console.log(this.state)
+		console.log("salaire: " + this.props.salaire)
+		console.log("results: ")
+		console.log(this.props.results)
+
+		const PERIOD = "2017-12"
+		fetchCalculate(PERIOD, this.props.salaire).then(response => { 
+			console.log("response ^^ ")
+			console.log(response)
+			
+			console.log(response['individus']['openjibayiste']['salaire_net_a_payer']['2017-12'])
+			console.log(response['individus']['openjibayiste']['salaire_imposable']['2017-12'])
+			console.log(response['individus']['openjibayiste']['salaire_de_base']['2017-12']) //+ primes ?
+			console.log(response['individus']['openjibayiste']['salaire_super_brut']['2017-12'])
+		})
 		this.setState({ buttonClicked: true })
 	}
 
@@ -45,9 +59,14 @@ export default class Results extends Component {
 	}
 
 	render() {
+		console.log("Results : ")
+		console.log(this.props)
+
 		let defaultTextColour = '#ffffff',
 			defaultColour = '#4A89DC',
 			buttonStyle = {background: defaultColour, borderColor: defaultTextColour, color: defaultTextColour}
+		console.log("Button clicked?")
+		console.log(this.state.buttonClicked)
 		return (
 			<div>
 				<Summary {...this.props} handleOnButtonClick={ this.handleOnButtonClick } />
@@ -55,7 +74,7 @@ export default class Results extends Component {
 				{ this.state.buttonClicked ?
 					<div>
 						<br />
-						<WaterfallChart />
+						<WaterfallChart results={ this.props.results }/>
 						<br />
 						<br />
 						<div className="figures" align="center">
