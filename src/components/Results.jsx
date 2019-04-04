@@ -35,7 +35,6 @@ export default class Results extends Component {
 	
 	handleOnButtonClick(){
 		console.log("!	Results - handleOnButtonClick")
-		console.log(this.state)
 		console.log("salaire: " + this.props.salaire)
 		console.log("results: ")
 		console.log(this.props.results)
@@ -49,8 +48,14 @@ export default class Results extends Component {
 			console.log(response['individus']['openjibayiste']['salaire_imposable']['2017-12'])
 			console.log(response['individus']['openjibayiste']['salaire_de_base']['2017-12']) //+ primes ?
 			console.log(response['individus']['openjibayiste']['salaire_super_brut']['2017-12'])
+
+			this.props.results['salaire_net_a_payer'] = response['individus']['openjibayiste']['salaire_net_a_payer']['2017-12']
+			this.props.results['salaire_imposable'] = response['individus']['openjibayiste']['salaire_imposable']['2017-12']
+			this.props.results['salaire_de_base'] = response['individus']['openjibayiste']['salaire_de_base']['2017-12']
+			this.props.results['salaire_super_brut'] = response['individus']['openjibayiste']['salaire_super_brut']['2017-12']
+			this.setState({ buttonClicked: true })
 		})
-		this.setState({ buttonClicked: true })
+		console.log(this.state)
 	}
 
 	handleOnPlusClick(){
@@ -59,14 +64,15 @@ export default class Results extends Component {
 	}
 
 	render() {
-		console.log("Results : ")
-		console.log(this.props)
+		console.log("Results.render()")
+		console.log(this.props.results)
 
 		let defaultTextColour = '#ffffff',
 			defaultColour = '#4A89DC',
 			buttonStyle = {background: defaultColour, borderColor: defaultTextColour, color: defaultTextColour}
 		console.log("Button clicked?")
 		console.log(this.state.buttonClicked)
+		console.log(this.props.results)
 		return (
 			<div>
 				<Summary {...this.props} handleOnButtonClick={ this.handleOnButtonClick } />
