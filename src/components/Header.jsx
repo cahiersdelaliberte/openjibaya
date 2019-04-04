@@ -8,7 +8,8 @@ export default class Header extends Component {
         return (
             <header>
                     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-                    
+                    <link rel="shortcut icon" href="#" />
+
                     <ul>
                         <li><a className="menu-item" href="http://www.cahiersdelaliberte.org">Cahiers de la Liberté</a></li>
                         <li><a className="menu-item" href='https://www.openfisca.tn'>OpenFisca Tunisia</a></li>
