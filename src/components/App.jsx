@@ -22,16 +22,18 @@ export default class App extends React.Component {
     this.state = { 
     	// typeSalaireEntre: 'brut',
     	// salaireNetAPayer: smic_tnd,
-		typeEmploye: "fonctionnaire",
-		salaire: SMIG_TND_2016,
-		periodeSalaire: "an",
-		statutFamilial: "celibataire",
-		nbEnfants: 0,
+		  typeEmploye: "fonctionnaire",
+		  salaire: SMIG_TND_2016,
+		  periodeSalaire: "an",
+		  statutFamilial: "celibataire",
+		  nbEnfants: 0,
 
-		results: {
-			salaire_imposable: 17710,
-			salaire_net_a_payer: 14700
-		}
+		  results: {
+        salaire_net_a_payer: 0,
+		  	salaire_imposable: 0,
+        salaire_de_base: 0,
+        salaire_super_brut: 0
+		  }
     }
     this.handleChange = this.handleChange.bind(this)
     console.log('App')
