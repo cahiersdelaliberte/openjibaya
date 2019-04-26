@@ -55,6 +55,10 @@ export default class WaterfallChart extends Component {
 		var salaireDeBasePrimes = this.props.results['salaire_de_base'] + primes
 		var salaireSuperBrut = this.props.results['salaire_super_brut']
 		
+		console.log("Nombre ? " + Number.isInteger(salaireNetAPayer))
+		console.log("Nombre ? " + Number.isInteger(salaireImposable))
+		console.log("Nombre ? " + Number.isInteger(salaireDeBasePrimes))
+
 		const config = draw(
 			salaireNetAPayer, 
 			salaireImposable, 

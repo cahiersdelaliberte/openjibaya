@@ -49,10 +49,10 @@ export default class Results extends Component {
 			console.log(response['individus']['openjibayiste']['salaire_de_base']['2017-12']) //+ primes ?
 			console.log(response['individus']['openjibayiste']['salaire_super_brut']['2017-12'])
 
-			this.props.results['salaire_net_a_payer'] = response['individus']['openjibayiste']['salaire_net_a_payer']['2017-12']
-			this.props.results['salaire_imposable'] = response['individus']['openjibayiste']['salaire_imposable']['2017-12']
-			this.props.results['salaire_de_base'] = response['individus']['openjibayiste']['salaire_de_base']['2017-12']
-			this.props.results['salaire_super_brut'] = response['individus']['openjibayiste']['salaire_super_brut']['2017-12']
+			this.props.results['salaire_net_a_payer'] = parseInt(response['individus']['openjibayiste']['salaire_net_a_payer']['2017-12'])
+			this.props.results['salaire_imposable'] = parseInt(response['individus']['openjibayiste']['salaire_imposable']['2017-12'])
+			this.props.results['salaire_de_base'] = parseInt(response['individus']['openjibayiste']['salaire_de_base']['2017-12'])
+			this.props.results['salaire_super_brut'] = parseInt(response['individus']['openjibayiste']['salaire_super_brut']['2017-12'])
 			this.setState({ buttonClicked: true })
 		})
 		console.log(this.state)
