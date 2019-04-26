@@ -4,6 +4,76 @@ import Highcharts from 'highcharts'
 const ReactHighcharts = require("react-highcharts");
 require("highcharts/js/highcharts-more")(ReactHighcharts.Highcharts);
 
+
+export default class WaterfallChart extends Component {
+
+	constructor(props){
+		super(props)
+
+		// this.state = {
+			// salaire_net_a_payer: 0,
+		  	// salaire_imposable: 0,
+        	// salaire_de_base: 0,
+        	// salaire_super_brut: 0
+		// }
+		this.state = { hasError: false }
+	}
+
+	// componentDidUpdate(previousProps){
+	// 	this.setState({salaire_net_a_payer: this.props.results['salaire_net_a_payer']})
+	// }
+
+	// componentDidMount() {
+    //	let chart = this.refs.chart.getChart();
+	// }
+
+	static getDerivedStateFromError(error) {
+    	// Update state so the next render will show the fallback UI.
+    	return { hasError: true };
+  	}
+
+	componentDidCatch(error, info) {
+    	console.log(error, info);
+  	}
+
+	render() {
+		if (this.state.hasError) {
+      		return <h1>Something went wrong.</h1>;
+    	}
+
+		//let salaireNetAPayer = this.props.results.salaire_net_a_payer,
+		//impots = this.props.results.irpp,
+		//cotisations = this.props.results.cotisations_employeur + this.props.results.cotisations_salarie 
+
+		console.log("WaterfallChart")
+		console.log(this.props.results)
+
+		// this.props.results = props de <App>
+		const primes = 0
+		var salaireNetAPayer = this.props.results['salaire_net_a_payer']
+		var salaireImposable = this.props.results['salaire_imposable']
+		var salaireDeBasePrimes = this.props.results['salaire_de_base'] + primes
+		var salaireSuperBrut = this.props.results['salaire_super_brut']
+		
+		const config = draw(
+			salaireNetAPayer, 
+			salaireImposable, 
+			salaireDeBasePrimes, 
+			salaireSuperBrut
+			)
+
+		console.log(config.series.data)
+
+		let chartRef = this.refs.chart
+		if(chartRef) {
+			console.log("Redessine moi !")
+			chartRef.getChart().redraw()
+		}
+
+		return ( <ReactHighcharts config = {config} ref="chart"></ReactHighcharts> )
+	}
+}
+
 function draw(salaireNetAPayer, salaireImposable, salaireDeBasePrimes, salaireSuperBrut) {
 	var chartTitle = 'Impôts & Cotisations'
 
@@ -78,48 +148,3 @@ function draw(salaireNetAPayer, salaireImposable, salaireDeBasePrimes, salaireSu
 		}]
 	} //end return
 } //end function
-
-export default class WaterfallChart extends Component {
-
-	constructor(props){
-		super(props)
-
-		// this.state = {
-			// salaire_net_a_payer: 0,
-		  	// salaire_imposable: 0,
-        	// salaire_de_base: 0,
-        	// salaire_super_brut: 0
-		// }
-	}
-
-	// componentDidUpdate(previousProps){
-	// 	this.setState({salaire_net_a_payer: this.props.results['salaire_net_a_payer']})
-	// }
-
-	render() {
-		//let salaireNetAPayer = this.props.results.salaire_net_a_payer,
-		//impots = this.props.results.irpp,
-		//cotisations = this.props.results.cotisations_employeur + this.props.results.cotisations_salarie 
-
-		console.log("WaterfallChart")
-		console.log(this.props.results)
-
-		// this.props.results = props de <App>
-		const primes = 0
-		var salaireNetAPayer = this.props.results['salaire_net_a_payer']
-		var salaireImposable = this.props.results['salaire_imposable']
-		var salaireDeBasePrimes = this.props.results['salaire_de_base'] + primes
-		var salaireSuperBrut = this.props.results['salaire_super_brut']
-		
-		return (
-				<ReactHighcharts config = {
-					draw(
-						salaireNetAPayer, 
-						salaireImposable, 
-						salaireDeBasePrimes, 
-						salaireSuperBrut
-						)}>
-				</ReactHighcharts>
-				)
-	}
-}
