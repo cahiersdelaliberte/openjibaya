@@ -74,12 +74,12 @@ export default class BarChart extends Component {
 
 		// console.log("Salaire net à payer : "+salaireNetAPayer+"Salaire imposable : "+salaireImposable)
 		console.log('Salaire imposable : '+salaireImposable+' / Salaire net à payer : '+salaireNetAPayer)
-		console.log('Imposition de : '+(salaireImposable - salaireNetAPayer))
+		console.log('Imposition de : '+ impot.toFixed(2))
 		//To add break point: debugger
 		
 		return (
 				<ReactHighcharts config = {draw(this.props.year, this.props.repartitionBudget[this.props.year], impot)}></ReactHighcharts>
-				//old: <ReactHighcharts config = {draw(17710, 14700)}></ReactHighcharts>
+				//<ReactHighcharts config = {draw(17710, 14700)}></ReactHighcharts>
 				)
 	}
 }
