@@ -14,8 +14,9 @@ all: start
 old-serve:
 	paster serve --reload development-tunisia.ini
 
+# http://127.0.0.1:8000
 serve:
-	openfisca serve -c openfisca_tunisia -p ${OPENFISCA_API_PORT} --reforms openfisca_tunisia.reforms.de_net_a_brut.de_net_a_brut
+	openfisca serve -c openfisca_tunisia -p ${OPENFISCA_API_PORT} --reforms openfisca_tunisia.reforms.de_net_a_salaire_de_base.de_net_a_salaire_de_base
 
 # make calc json=tests/toto.json
 calc:

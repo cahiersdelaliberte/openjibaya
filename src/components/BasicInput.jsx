@@ -16,6 +16,7 @@ export default class BasicInput extends Component {
 		const partialState = {
 			[name]: value
 		}
+		console.log(">>>" + partialState)
 		console.log("handleChange> " + name + ": " + value)
 		console.log("avant " +  this.props.salaire)
 		this.props.onUserChange(partialState)

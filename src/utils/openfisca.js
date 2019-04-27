@@ -1,5 +1,5 @@
-const OPENFISCA_WEB_API_URL = "https://www.openfisca.tn/api/v0.13.0/"
-
+// const OPENFISCA_WEB_API_URL = "https://www.openfisca.tn/api/v0.13.0/"
+const OPENFISCA_WEB_API_URL = "http://127.0.0.1:8000/"
 
 export function fetchCalculate(period, salaireNetAPayer){
   return fetchJson(OPENFISCA_WEB_API_URL + "calculate", 
@@ -24,9 +24,9 @@ function fetchJson(url, options) {
     }).then(data => {
       console.log(data)
       return data
-      if (data.error) {
-        throw new Error(JSON.stringify(data.error))
-      }
+      // if (data.error) {
+      //   throw new Error(JSON.stringify(data.error))
+      // }
   })
 }
 
